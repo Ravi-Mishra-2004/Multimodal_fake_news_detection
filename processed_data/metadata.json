@@ -1,0 +1,33 @@
+{
+  "total_samples": 6621,
+  "class_distribution": {
+    "1": 3667,
+    "0": 2954
+  },
+  "class_balance": {
+    "real": 2954,
+    "fake": 3667
+  },
+  "text_statistics": {
+    "mean_length": 50.52620450083069,
+    "median_length": 45.0,
+    "min_length": 1,
+    "max_length": 293
+  },
+  "image_statistics": {
+    "target_size": [
+      256,
+      256
+    ],
+    "format": "JPEG",
+    "color_mode": "RGB"
+  },
+  "preprocessing_parameters": {
+    "sample_size": 10000,
+    "max_text_length": 128,
+    "image_size": [
+      256,
+      256
+    ]
+  }
+}

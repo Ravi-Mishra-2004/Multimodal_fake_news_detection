@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fake News Detection - Multimodal AI</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🔍 Fake News Detection</h1>
+            <p class="subtitle">Multimodal AI-powered fake news classifier</p>
+        </header>
+
+        <div class="main-content">
+            <form id="predictionForm" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label for="text">Enter News Title/Text:</label>
+                    <textarea 
+                        id="text" 
+                        name="text" 
+                        rows="4" 
+                        placeholder="Enter the news headline or text you want to check..."
+                        required
+                    ></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="image">Upload Image:</label>
+                    <div class="file-upload-wrapper">
+                        <input 
+                            type="file" 
+                            id="image" 
+                            name="image" 
+                            accept="image/*"
+                            required
+                        >
+                        <label for="image" class="file-upload-label">
+                            <span class="file-upload-text">Choose Image</span>
+                            <span class="file-upload-icon">📷</span>
+                        </label>
+                    </div>
+                    <div id="imagePreview" class="image-preview"></div>
+                </div>
+
+                <button type="submit" id="submitBtn" class="submit-btn">
+                    <span class="btn-text">Check for Fake News</span>
+                    <span class="btn-loader" style="display: none;">⏳ Analyzing...</span>
+                </button>
+            </form>
+
+            <div id="result" class="result-container" style="display: none;">
+                <h2>Prediction Result</h2>
+                <div id="resultContent"></div>
+            </div>
+
+            <div id="error" class="error-container" style="display: none;">
+                <h3>❌ Error</h3>
+                <p id="errorMessage"></p>
+            </div>
+        </div>
+
+        <footer>
+            <p>Powered by BERT + ResNet50 Multimodal AI</p>
+            <p class="info">Upload an image and enter text to detect fake news</p>
+        </footer>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>
+
